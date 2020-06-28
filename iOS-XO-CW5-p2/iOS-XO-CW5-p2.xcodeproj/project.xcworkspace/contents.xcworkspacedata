@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iOS-XO-CW5-p2.xcodeproj">
+      location = "group:../background color source.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../../Desktop/speaker.svg">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

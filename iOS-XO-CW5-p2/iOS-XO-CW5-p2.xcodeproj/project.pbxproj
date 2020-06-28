@@ -13,6 +13,11 @@
 		89A64A9124A7B02C0099F576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A64A8F24A7B02C0099F576 /* Main.storyboard */; };
 		89A64A9324A7B0320099F576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A64A9224A7B0320099F576 /* Assets.xcassets */; };
 		89A64A9624A7B0320099F576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A64A9424A7B0320099F576 /* LaunchScreen.storyboard */; };
+		89E2D89A24A80F4100D27425 /* backgroundSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89E2D89924A80F4100D27425 /* backgroundSound.mp3 */; };
+		89EFC81E24A8B86E0067E00A /* backgroundColorSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC81D24A8B86E0067E00A /* backgroundColorSource.swift */; };
+		89EFC82024A8D3940067E00A /* missionPassSoundEffect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89EFC81F24A8D3940067E00A /* missionPassSoundEffect.mp3 */; };
+		89EFC82224A8D3A60067E00A /* PunchSoundEffect1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89EFC82124A8D3A60067E00A /* PunchSoundEffect1.mp3 */; };
+		89EFC82424A8D3B10067E00A /* PunchSoundEffect2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89EFC82324A8D3B10067E00A /* PunchSoundEffect2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		89A64A9224A7B0320099F576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89A64A9524A7B0320099F576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89A64A9724A7B0320099F576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E2D89924A80F4100D27425 /* backgroundSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundSound.mp3; path = ../../../../../Desktop/backgroundSound.mp3; sourceTree = "<group>"; };
+		89EFC81D24A8B86E0067E00A /* backgroundColorSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundColorSource.swift; sourceTree = "<group>"; };
+		89EFC81F24A8D3940067E00A /* missionPassSoundEffect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = missionPassSoundEffect.mp3; path = ../../../../../Desktop/missionPassSoundEffect.mp3; sourceTree = "<group>"; };
+		89EFC82124A8D3A60067E00A /* PunchSoundEffect1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PunchSoundEffect1.mp3; path = ../../../../../Desktop/PunchSoundEffect1.mp3; sourceTree = "<group>"; };
+		89EFC82324A8D3B10067E00A /* PunchSoundEffect2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PunchSoundEffect2.mp3; path = ../../../../../Desktop/PunchSoundEffect2.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,12 @@
 				89A64A8924A7B02C0099F576 /* AppDelegate.swift */,
 				89A64A8B24A7B02C0099F576 /* SceneDelegate.swift */,
 				89A64A8D24A7B02C0099F576 /* ViewController.swift */,
+				89EFC82324A8D3B10067E00A /* PunchSoundEffect2.mp3 */,
+				89EFC82124A8D3A60067E00A /* PunchSoundEffect1.mp3 */,
+				89EFC81F24A8D3940067E00A /* missionPassSoundEffect.mp3 */,
+				89E2D89924A80F4100D27425 /* backgroundSound.mp3 */,
 				89A64A8F24A7B02C0099F576 /* Main.storyboard */,
+				89EFC81D24A8B86E0067E00A /* backgroundColorSource.swift */,
 				89A64A9224A7B0320099F576 /* Assets.xcassets */,
 				89A64A9424A7B0320099F576 /* LaunchScreen.storyboard */,
 				89A64A9724A7B0320099F576 /* Info.plist */,
@@ -125,8 +140,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89EFC82024A8D3940067E00A /* missionPassSoundEffect.mp3 in Resources */,
 				89A64A9624A7B0320099F576 /* LaunchScreen.storyboard in Resources */,
+				89EFC82224A8D3A60067E00A /* PunchSoundEffect1.mp3 in Resources */,
+				89EFC82424A8D3B10067E00A /* PunchSoundEffect2.mp3 in Resources */,
 				89A64A9324A7B0320099F576 /* Assets.xcassets in Resources */,
+				89E2D89A24A80F4100D27425 /* backgroundSound.mp3 in Resources */,
 				89A64A9124A7B02C0099F576 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +159,7 @@
 			files = (
 				89A64A8E24A7B02C0099F576 /* ViewController.swift in Sources */,
 				89A64A8A24A7B02C0099F576 /* AppDelegate.swift in Sources */,
+				89EFC81E24A8B86E0067E00A /* backgroundColorSource.swift in Sources */,
 				89A64A8C24A7B02C0099F576 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
