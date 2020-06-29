@@ -10,22 +10,8 @@ import Foundation
 import UIKit
 import GameKit
 
-struct BackgroundColorSource {
-    let colors = [
-        UIColor(displayP3Red: 27.0/255.0 , green: 52.0/255.0, blue: 125.0/255.0, alpha: 0),
-        UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0),
-        UIColor(displayP3Red: 152.0/255.0, green: 180.0/255.0, blue: 237.0/255.0, alpha: 0),
-        UIColor(displayP3Red: 212.0/255.0, green: 184.0/255.0, blue: 140.0/255.0, alpha: 0),
-        UIColor(displayP3Red: 242.0/255.0, green: 206.0/255.0, blue: 239.0/255.0, alpha: 0),
-        UIColor(displayP3Red: 0, green: 35.0/255.0, blue: 82.0/255.0, alpha: 0)
-    ]
-    let colors1: UIColor = [
-        UIColor(red: 27.0/255.0 , green: 52.0/255.0, blue: 125.0/255.0, alpha: 0),
-                            
-    ]
+    let colors: [UIColor] = [
+        #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1), #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        ]
     
-    func randomBackground() -> UIColor {
-        let randomColor = GKRandomSource.sharedRandom().nextInt(upperBound: colors.count)
-        return colors[randomColor]
-    }
-}
+   

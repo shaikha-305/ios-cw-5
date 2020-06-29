@@ -24,12 +24,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var oScoreLabel: UILabel!
     @IBOutlet weak var xScoreLabel: UILabel!
     var backgroundSound: AVAudioPlayer?
-    let backgroundColorSource = BackgroundColorSource()
     var XTurnSound: AVAudioPlayer?
     var OTurnSound: AVAudioPlayer?
     var winnerSound: AVAudioPlayer?
-
-    @IBOutlet weak var viewBG: UIView!
+    
+    @IBOutlet weak var backgroundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +52,7 @@ class ViewController: UIViewController {
                 XTurnSound = try AVAudioPlayer(contentsOf: url)
                 XTurnSound?.play()
                 
+                
             } catch {
                 // couldn't load file :(
                 
@@ -67,6 +67,7 @@ class ViewController: UIViewController {
             do {
                 OTurnSound = try AVAudioPlayer(contentsOf: url)
                 OTurnSound?.play()
+                
                 
             } catch {
                 // couldn't load file :(
@@ -87,7 +88,7 @@ class ViewController: UIViewController {
             turnLabel.text = "O Turn"
             //score board
             xScore += 1
-            xScoreLabel.text = "\(xScore)"
+            xScoreLabel?.text = "\(xScore)"
             if xScore == 3 {
                 let path = Bundle.main.path(forResource: "missionPassSoundEffect.mp3", ofType:nil)!
                 let url = URL(fileURLWithPath: path)
@@ -139,14 +140,9 @@ class ViewController: UIViewController {
     
     // reset the game
     @IBAction func reset(_ sender: Any) {
-        let newColor1 = backgroundColorSource.randomBackground()
-        var newColor: UIColor {
-                      get{
-                        return backgroundColorSource.randomBackground()
-                      }
-                  }
-        print(newColor1)
-        viewBG.backgroundColor = .red
+       // Random color for BG
+        backgroundLabel.backgroundColor = colors.randomElement()
+        // reset the game
         var buttons: [UIButton] = [b1, b2, b3, b4, b5, b6, b7, b8, b9]
            for button in buttons {
                button.setTitle("", for:  .normal)
@@ -161,15 +157,15 @@ class ViewController: UIViewController {
     
     // winning conditions
     func checkWinner(p: String) -> Bool{
-        let f1 = (b1.titleLabel?.text)!
-        let f2 = (b2.titleLabel?.text)!
-        let f3 = (b3.titleLabel?.text)!
-        let f4 = (b4.titleLabel?.text)!
-        let f5 = (b5.titleLabel?.text)!
-        let f6 = (b6.titleLabel?.text)!
-        let f7 = (b7.titleLabel?.text)!
-        let f8 = (b8.titleLabel?.text)!
-        let f9 = (b9.titleLabel?.text)!
+        let f1: String! = (b1.titleLabel?.text)
+        let f2: String! = (b2.titleLabel?.text)
+        let f3: String! = (b3.titleLabel?.text)
+        let f4: String! = (b4.titleLabel?.text)
+        let f5: String! = (b5.titleLabel?.text)
+        let f6: String! = (b6.titleLabel?.text)
+        let f7: String! = (b7.titleLabel?.text)
+        let f8: String! = (b8.titleLabel?.text)
+        let f9: String! = (b9.titleLabel?.text)
         
         let r1 = (f1,f2,f3) == (p,p,p)
         let r2 = (f4,f5,f6) == (p,p,p)
