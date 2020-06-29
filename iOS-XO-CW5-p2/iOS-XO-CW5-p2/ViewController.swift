@@ -101,11 +101,19 @@ class ViewController: UIViewController {
                     // couldn't load file :(
                     
                 }
+                oScore = 0
+                xScore = 0
                 xScoreLabel.text = " "
                 oScoreLabel.text = " "
 
             }
-            okAlert(title: "X Wins!!", message: "Congrats!😍 you can reset the game NOW!" )
+            
+            let alertController = UIAlertController(title: "X WINS!😍", message: "RESET THE GAME!", preferredStyle: .alert)
+            let resetAlert =  UIAlertAction(title: "RESET THE GAME!", style: .cancel) { (alert) in
+                       self.resetTheGame()
+                   }
+            alertController.addAction(resetAlert)
+            present(alertController, animated: true, completion: nil)
         }else if checkWinner(p: "O"){
             
             turnLabel.text = "X"
@@ -124,18 +132,40 @@ class ViewController: UIViewController {
                                // couldn't load file :(
                                
                            }
+                            oScore = 0
+                            xScore = 0
                            xScoreLabel.text = " "
                            oScoreLabel.text = " "
                        }
-            okAlert(title: "O Wins!!", message: "Congrats!😍 you can reset the game NOW!" )
+            let alertController = UIAlertController(title: "O WINS!😍", message: "RESET THE GAME!", preferredStyle: .alert)
+            let resetAlert =  UIAlertAction(title: "RESET THE GAME!", style: .cancel) { (alert) in
+                       self.resetTheGame()
+                   }
+            alertController.addAction(resetAlert)
+            present(alertController, animated: true, completion: nil)
+            //  okAlert(title: "O Wins!!", message: "Congrats!😍 you can reset the game NOW!" )
+            
         } else if turn == 9 {
-            okAlert(title: "No one ones☹️", message: "reset game NOW!")
+            
+                let alertController = UIAlertController(title: "no one ones☹️", message: "RESET THE GAME!", preferredStyle: .alert)
+                let resetAlert =  UIAlertAction(title: "RESET THE GAME!", style: .cancel) { (alert) in
+                           self.resetTheGame()
+                       }
+                alertController.addAction(resetAlert)
+                present(alertController, animated: true, completion: nil)
         }
 
         let haptic = UIImpactFeedbackGenerator(style: .medium)
         haptic.prepare()
         haptic.impactOccurred()
 
+    }
+    // restart game from alert
+    
+    func resetAlert() {
+        UIAlertAction(title: "RESET THE GAME!", style: .cancel) { (alert) in
+            self.resetTheGame()
+        }
     }
     
     // reset the game
@@ -154,6 +184,18 @@ class ViewController: UIViewController {
            turnLabel.text = "X Turn"
           
        }
+    func resetTheGame() {
+        var buttons: [UIButton] = [b1, b2, b3, b4, b5, b6, b7, b8, b9]
+         for button in buttons {
+             button.setTitle("", for:  .normal)
+             button.titleLabel?.text = ""
+             button.isUserInteractionEnabled = true
+             
+         }
+         turn = 0
+         turnLabel.text = "X Turn"
+        
+    }
     
     // winning conditions
     func checkWinner(p: String) -> Bool{
@@ -181,6 +223,11 @@ class ViewController: UIViewController {
         } else {
             return false
         }
+        let alertController = UIAlertController(title: "\(p), WINS!😍", message: "RESET THE GAME!", preferredStyle: .alert)
+        let resetAlert =  UIAlertAction(title: "RESET THE GAME!", style: .cancel) { (alert) in
+                   self.resetTheGame()
+               }
+        
     }
     
    
